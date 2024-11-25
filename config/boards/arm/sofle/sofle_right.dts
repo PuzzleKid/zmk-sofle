@@ -35,12 +35,12 @@
             , <&gpio0 23 GPIO_ACTIVE_HIGH>
             ;
     };
-
-    ext-power {
-        compatible = "zmk,ext-power-generic";
-        label = "EXT_POWER";
-        control-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
-         init-delay-ms = <50>;
+    kscan1: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        wakeup-source;
+        diode-direction = "col2row";
+        col-gpios
+           = <&gpio0 13 GPIO_ACTIVE_HIGH>;
     };
 
      vbatt: vbatt {
